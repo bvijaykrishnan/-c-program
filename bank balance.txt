@@ -1,0 +1,32 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int atmpin=1234,pin,balance=10000,wd,rb,attempts=3;
+    while(attempts>0)
+    {
+        printf("Enter the pin:");
+        scanf("%d",&pin);
+        if(atmpin==pin)
+        {
+            printf("pin is correct");
+            printf("Enter the withdrawal amount:");
+            scanf("%d",&wd);
+            if(wd<=balance)
+            {
+                printf("Transaction successful\n");
+                balance-=wd;
+                printf("the remaining balance is %d",balance);
+            }
+            else
+            {
+                printf("Insufficient balance");
+            }
+        }
+        else
+        {
+            printf("Incorrect pin");
+        }
+    }
+    return 0;
+}
