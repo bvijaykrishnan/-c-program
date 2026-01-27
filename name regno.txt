@@ -1,0 +1,15 @@
+#include <stdio.h>
+struct student
+{
+    char name[20];
+    int regno;
+};
+int main() {
+    struct student std1 ={"Arun",1001};
+    struct student *point =&std1;
+    printf("My name is %s \n", point -> name);
+    printf("My name is memory address is %p \n", point -> name);
+    printf("My reg no is %d \n", point -> regno);
+    printf("My regno's momory address is %p \n", point -> regno);
+    return 0;
+}
