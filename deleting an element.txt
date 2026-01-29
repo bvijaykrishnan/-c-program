@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact *next;
+};
+int main() {
+struct contact *head, *temp, *newcontact,*previous;
+head = malloc(sizeof(struct contact));
+head->number =  7845274004;
+head->next = malloc(sizeof(struct contact));
+head->next->number = 9789941229 ;
+head->next->next = malloc(sizeof(struct contact));
+head->next->next->number = 9659660898 ;
+head->next->next->next = NULL ;
+newcontact = malloc(sizeof(struct contact));
+newcontact->number =6369307659 ;
+temp=head;
+while(temp !=NULL && temp->number != 9789941229)
+temp=temp->next;
+if(temp!=NULL)
+newcontact -> next = temp->next;
+temp->next = newcontact ;
+temp=head;
+while(temp!=NULL){
+    printf("%ld-->",temp->number);
+    temp = temp = temp->next;
+}
+printf("Finish\n");
+long int deletenumber = 6369307659;
+temp =head;
+previous=NULL;
+while (temp!=NULL&& temp->number != deletenumber){
+    previous=temp;
+    temp=temp->next;
+}
+if(temp!=NULL){
+    previous->next=temp->next;
+    free(temp);
+}
+temp=head;
+while(temp!=NULL){
+    printf("After deleting: ");
+    printf("%ld-->",temp->number);
+    temp = temp = temp->next;
+}
+printf("End");
+return 0;
+}
