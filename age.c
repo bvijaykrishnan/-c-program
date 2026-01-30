@@ -1,0 +1,9 @@
+#include <stdio.h>
+void myfunction(char myname[], int age){
+    printf("Hello my name is %s and my age is %d \n", myname, age);
+}
+int main() {
+    myfunction("kumar",30);
+    myfunction("sathish",20);
+    return 0;
+}
